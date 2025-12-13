@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>JETE</title>
+
+    <link rel="stylesheet" href="Pstyle.css">
+
+    <!--Cloud Flare for Icons and Design-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<!--This Website purpose is to create and make JETE Trading access online and reach customers through the web
+This will also help our purpose to make our Windows Form based Inventory with POS functional. -->
+
+
+<body>
+
+    <!--Header and Menu-->
+
+    <header>
+      
+        <div class="header-container">
+            <div class="logo">
+                <h1>JETE</h1>
+            </div>
+        
+            
+            <div class="nav-bar">
+                <ul>
+                    <li class="nav-menu"><a href="/Homepage/index.html">
+                        <r><span></span><span></span><span></span><span ></span>Home</r></a></li>
+                    <li class="nav-menu"><a href="/Shop/Shop.html">
+                        <r><span></span><span></span><span></span><span></span>Shop</r></a></li>
+                    <li class="nav-menu"><a href="#about">
+                        <r><span></span><span></span><span></span><span></span>About</r></a></li>
+                    <li class="nav-menu"><a href="#contact">
+                        <r><span></span><span></span><span></span><span></span>Contact</r></a></li>
+                </ul>
+                
+              
+                <div class="user-actions">
+                   <div class="user-welcome" id="userWelcome" style="color: white; font-weight: bold;">
+                   </div> 
+                   <a href="/Login/Login.html" class="login-btn" id="loginBtn">
+                        <i class="fas fa-user"></i> Login
+                        </a>
+                        <div  class="cart-btn">
+                        <a href="/Cart Design/cart.html" class = "cart"><i class="fas fa-shopping-cart"></i></a>
+                            
+                       <span class="cart-count">0</span>
+
+                        
+                </div>
+
+                 <div class = "order-btn">
+                          <a href= "/Profile/Profile.html"><i class="fa-solid fa-box"></i></a>
+                    </div>
+
+                    <a href ="# " id = "logoutBtn" class ="logoutBtn" style="display:inline;">Logout</a>
+
+
+
+            </div>
+
+            
+        </div>
+
+       
+    </header>
+
+
+    <main>
+     
+       <!--This part will be connected to the database it should fetch the order made fromn the cart-->
+
+       <section class="orders-section">
+    <h2>Your Orders</h2>
+    <div class="orders-container">
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Product(s)</th>
+            <th>Total (₱)</th>
+            <th>Status</th>
+            <th>Date Ordered</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTableBody">
+          <tr><td colspan="5" style="text-align:center;">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+          <section id="contact">
+                    <form id="contactForm" >
+                        <div class="contact-form">
+                <div class="form-control">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-control">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+            </section>
+
+                </main>
+
+    <!--Footer-->
+
+    <div class="footer">
+        <p>🐇 JETE Website. All rights reserved. 2025</p>
+    </div>
+
+            <!-- Firebase App SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+
+<!-- EmailJS service -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<script src="firebase.js"></script>
+<script src="Pjs.js"></script>
+
+ 
+    
+</body>
+</html>

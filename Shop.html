@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="shop.css">
+
+    <!--Cloud Flare for Icons and Design-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>JETE Shop</title>
+
+</head>
+
+        <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        </div>
+
+<body>
+
+    <!-- Header -->
+
+<header>
+        <div class="header-container">
+            <div class="logo">
+            <img src="fireext.png" alt="Fire Logo" class="fire-logo">
+            <h1>JETE</h1>
+        </div>
+
+            <div class="nav-bar">
+                <ul>
+                    <li class="nav-menu"><a href="index.html"><r><span></span><span></span><span></span><span></span>Home</r></a></li>
+                    <li class="nav-menu"><a href="Shop.html"><r><span></span><span></span><span></span><span></span>Shop</r></a></li>
+                    <li class="nav-menu"><a href="index.html"><r><span></span><span></span><span></span><span></span>About</r></a></li>
+                    <li class="nav-menu"><a href="#contact"><r><span></span><span></span><span></span><span></span>Contact</r></a></li>
+                </ul>
+
+                
+                <div class="user-actions">
+                   <div class="user-welcome" id="userWelcome" style="color: white; font-weight: bold;"
+                   style="display: inline-block;">
+                 </div>
+                   <a href="/Login/Login.html" class="login-btn" id="loginBtn">
+                        <i class="fas fa-user"></i> Login
+                        </a>
+                    <div  class="cart-btn">
+                        <a href="/Cart Design/cart.html" class = "cart"><i class="fas fa-shopping-cart"></i></a>
+                            
+                        <span class="cart-count">0</span>
+                     
+                 
+                </div>
+
+                
+                 <div class = "order-btn">
+                          <a href= "/Profile/Profile.html"><i class="fa-solid fa-box"></i></a>
+
+                          
+                    </div>
+                            <a href ="#" id="logoutBtn" class="logoutBtn">Logout</a>
+                      </div> 
+            </div>
+        </div>
+    </header>
+
+            <!--Products main container where products be listed and the database is yet to be connected -->
+    <main>
+            <section id="products" class="product-section">
+
+            <div class="product-controls">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <select id="categorySelect">
+                <option value="all">All Categories</option>
+                <option value="Fire Extinguisher">Fire Extinguishers</option>
+                <option value="Safety Kit">Safety Kit</option>
+                <option value="School Supply">School Supply</option>
+                <option value="Ice Cream">Ice Creams</option>
+                
+                </select>
+            </div>
+            
+            <div class="products-container"></div>
+
+            </section>
+
+    <section id="contact">
+                        <form id="contactForm" >
+                            <div class="contact-form">
+                    <div class="form-control">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-control">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+                </section>
+    </main>
+
+    <!--Footer-->
+
+    <div class="footer">
+        <p>🐇 JETE Website. All rights reserved. 2025</p>
+    </div>
+
+                <!-- Firebase App Core SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+   <!--Script-->
+    <script src="firebase.js"></script>
+    <script src ="Shop.js"></script>
+    
+    
+
+</body>
+</html>

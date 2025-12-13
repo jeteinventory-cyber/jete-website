@@ -1,0 +1,249 @@
+
+
+/* Family Font*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color:rgb(243, 243, 243)
+    
+}
+
+.wrapper{
+
+    position:relative;
+    width:500px;
+    height:550px;
+    background-color:ghostwhite;
+    border-radius:30px;
+    padding: 150px 42px 72px;
+    border: 1px solid black;
+    box-shadow: 1px 10px 20px;
+    transition:var(--transition--3s);
+
+
+    
+}
+
+.LGT{
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translate(-50%);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height:70px;
+    font-size:xx-large;
+    font-variant: small-caps;
+    border-radius: 0 0 20px 30px ;
+
+
+
+}
+
+.icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+/*Form*/
+
+
+.Login{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:85%;
+    transition: var(--transition--3s);
+
+}
+
+.SignUp{
+   position: relative;
+  width: 100%;
+}
+
+.Log-Box{
+
+    position: relative;
+  margin-bottom: 20px;
+
+
+    
+}
+
+.field{
+   width: 100%;
+  height: 55px;
+  font-size: 16px;
+  background: transparent;
+  color: black;
+  padding: 12px 40px 12px 10px;
+  border: 1px solid black;
+  border-radius: 25px;
+  outline: none;
+}
+
+
+
+.field:focus ~ .label,
+.field:valid ~ .label{
+        top:0%;
+        font-size:14px;
+        background-color: white;
+        color:black;
+        padding: 0 10px;
+}
+
+.icon{
+    position: absolute;
+    top:50%;
+    left:350px;
+    transform: translateY(-100%);
+    font-size: 20px;
+    color:black ;
+}
+
+
+
+.form {
+    display:flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+}
+
+.col1{
+    display: flex;
+    align-items: center;
+    gap:6px;
+
+}
+
+.SubmitBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width:100%;
+    height: 50px;
+    background-color:  black;
+    color:white;
+    font-size: 16px;
+    font-weight: 500;
+    border:none;
+    border-radius: 40px ;
+    cursor:pointer;
+    transition: var(--transition--3s);
+}
+
+.SubmitBtn.hover{
+    gap:20px;
+}
+
+
+.RegisterForm{
+    text-align:center;
+
+}
+
+.RegisterForm a{
+    font-weight: 500    ;
+}
+
+.errorMsg{
+    position:absolute;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px;
+}
+.error-text {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  margin-top: -10px; 
+}
+
+/* errors as displayed blocks */
+
+.error-text {
+  display: block; 
+}
+
+.confirm{
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  margin-top:10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.global-error {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+/* Modal Background */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+}
+
+/* Modal Box */
+.modal-content {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 15% auto;
+  animation: fadeIn 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.modal-content h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.modal-content p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

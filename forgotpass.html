@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="fpass.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="Titlelog">FORGOT PASSWORD</div>
+    </div>
+
+    <form class="ForgotForm" id="forgotForm" autocomplete="off">
+      <div class="input-box">
+        <label for="email">Enter your registered email:</label>
+        <input type="email" id="email" placeholder="example@email.com" required>
+      </div>
+      <div id="error-msg" class="error-text"></div>
+      <button type="submit" class="SubmitBtn">Send Reset Link</button>
+      <p class="back-login">Remembered your password? <a href="Login.html">Go back to login</a></p>
+    </form>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="firebase.js"></script>
+
+  <!-- EmailJS -->
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+ 
+  <script src="fpass.js"></script>
+</body>
+</html>

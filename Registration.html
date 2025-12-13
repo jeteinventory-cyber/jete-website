@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style2.css" />
+  <title>Register</title>
+</head>
+
+
+
+<body>
+          <div class="wrapper">
+            <div class="header">
+              <div class="Titlelog">
+                <div class="RGT">REGISTER</div>
+              </div>
+            </div>
+
+    <!--All datas that will be registered here will still yet be to connected to the database and be fetched. -->
+
+    <!--Register Form-->
+    <form action="#" class="SignUp" autocomplete="off">
+
+    
+      <div id="errorMsg" class="error-text global-error"></div>
+
+      <!--Username-->
+      <div class="Log-Box">
+        <div id="error-username" class="error-text"></div>
+        <input type="text" class="field" placeholder="Username" id="signname" />
+      </div>
+
+      <!--Email-->
+      <div class="Log-Box">
+        <div id="error-email" class="error-text"></div>
+        <input type="text" class="field" placeholder="Email" id="email" />
+        <img src="email.png" class="icon" alt="Email" />
+      </div>
+
+      <!--Password-->
+      <div class="Log-Box">
+        <div id="error-password" class="error-text"></div>
+        <input type="password" class="field" placeholder="Password" id="signpass" />
+        <img src="lock.png" class="icon" alt="Password" />
+      </div>
+
+      <!--This is yet to be able to receive SMS when the billing is activated -->
+      
+      <div class="Log-Box">
+      <div id="error-phone" class="error-text"></div>
+      <input type="tel" class="field" 
+       placeholder="Phone Number (e.g. +639123456789)" 
+       id="phone"
+       maxlength="14" />
+      </div>
+
+      <!--Confirmation Code in Hidden Mode-->
+      <div class="Log-Box" id="confirmationBox" style="display: none;">
+        <div id="error-confirm" class="error-text"></div>
+        <input type="text" id="codeInput" class="field" placeholder="Enter confirmation code" />
+         <button type="button" class="confirm" id="confirmBtn">Confirm</button>
+            <div id="recaptcha-container" style="display: none;"></div>
+      </div>
+      
+   
+       
+      <!--Checkbox-->
+      <div class="form">
+        <input type="checkbox" id="agree" />
+        <label for="agree">I agree to terms & conditions</label>
+        <div id="error-agree" class="error-text"></div>
+      </div>
+
+      <!--Submit-->
+          <div id="loadingBar" class="loading-bar" style="display:none;">
+        <div class="loading-progress"></div>
+    </div>
+
+      <div class="Log-Box">
+        <button type="button" class="SubmitBtn" id="SignUpBT">Sign Up</button>
+      </div>
+
+      <!--Link to Login-->
+      <div class="RegisterForm">
+        <span>Already have an account? <a href="Login.html">Login</a></span>
+      </div>
+    </form>
+  </div>
+
+
+
+
+ <!-- Firebase App (Compat SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<!-- Your Firebase config and initialization -->
+<script src="firebase.js"></script>
+
+<!-- Your form logic -->
+<script src="script2.js"></script>
+
+<div id="termsModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <h3>Terms & Conditions</h3>
+     <p class="terms-text">
+  <strong>JETE — Registration Terms & Data Purpose Agreement</strong><br><br>
+
+  <strong>Effective Date:</strong> 12/10/2025<br>
+  <strong>Last Updated:</strong> (12/13/2025)<br><br>
+
+  By creating an account on the JETE website, you acknowledge and agree to the terms below regarding the collection, storage, and use of your personal information. If you do not agree with these terms, please do not proceed with registration.<br><br>
+
+  <strong>1. Information We Collect</strong><br>
+  During registration, we collect the following information:
+  <ul>
+        <li>Email address</li>
+        <li>Phone number</li>
+        <li>Password</li>
+  </ul>
+
+  <strong>2. Purpose of Data Collection</strong><br>
+  Your information is collected and stored strictly for the following purposes:
+  <ul>
+    <li><strong>Account access</strong>  to allow secure login, profile management, and order viewing</li>
+    <li><strong>Order communication</strong>  to confirm purchases, send order updates, and provide customer support</li>
+    <li><strong>Security and verification</strong>  to verify account ownership and prevent unauthorized access</li>
+  </ul>
+
+  <strong>3. Data Protection</strong><br>
+  Your password is securely encrypted and cannot be viewed by JETE staff. We do not sell, trade, or share your personal information with unauthorized third parties. Access to user data is limited to authorized personnel only and strictly for operational purposes.<br><br>
+
+  <strong>4. User Responsibilities</strong><br>
+  By registering, you agree that:
+  <ul>
+    <li>The information you provide is accurate and truthful</li>
+    <li>You will keep your login credentials confidential</li>
+    <li>You will notify us immediately if you suspect unauthorized access to your account</li>
+  </ul>
+
+  <strong>5. Data Removal</strong><br>
+  If you wish to stop using our services, you may request the deletion of your registration data. All personal information will be permanently removed from our records unless retention is required by law.<br><br>
+
+  <strong>6. Agreement Updates</strong><br>
+  JETE may update this agreement when necessary. Continued use of your account indicates acceptance of the revised terms.<br><br>
+
+  <strong>7. Contact Information</strong><br>
+  For inquiries, concerns, or data deletion requests, please contact us at:<br>
+  <strong>Email:</strong> jeteinventory@gmail.com
+</p>
+
+    <button id="termsOkBtn">OK</button>
+  </div>
+
+</div>
+
+</body>
+</html>

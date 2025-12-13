@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  
+                    <!--CSS and icons-->
+
+    <link rel = "stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+
+<!-- Success Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h2>Login Successful!</h2>
+    <p>You will be redirected shortly...</p>
+  </div>
+</div>
+
+
+<body>
+
+    <div class ="wrapper">
+        <div class = "header">
+            <div class ="Titlelog">
+                <div class ="LGT"> LOGIN</div>
+             
+            </div>
+             </div>
+               <!--Login Form-->
+                <form action = "#" class = "Login" autocomplete="off">
+                    <div class = "Log-Box">
+                        <div id="error-email" class="error-text"></div>
+                        <input type="text" class = "field" placeholder ="Email" id ="log">
+                        <img  src="email.png" class = "icon" alt="Email">
+
+                        
+                    </div>
+                      <div class = "Log-Box">
+                        <div id="error-password" class="error-text"></div>
+                        <input type="password" class = "field" placeholder ="Password"id ="pass">
+                        <img src="lock.png" class = "icon" alt="Password">
+
+                    </div>
+                
+                    <div class = "form ">
+                        <div class = "col1"></div>
+                        <div class ="col2"></div>
+                            <a href ="forgotpass.html   "> Forgot Password?</a>
+                    </div>
+
+                    <div class = "Log-Box">
+                        <button class = "SubmitBtn" id = "SignIn"> Sign In </button>
+                    </div>
+
+                    <div class="RegisterForm">
+                        <span> Register Here! <a href = "Registration.html"> Register</a></span>
+                    </div>
+                </form>
+             
+    </div>
+    
+
+
+        <!-- Firebase App (Core SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script src="firebase.js"></script>
+
+ <script src = "script.js"></script>
+
+</body>
+</html>
