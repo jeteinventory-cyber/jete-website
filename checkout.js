@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkoutForm = document.querySelector(".checkout-form");
   const completeBtn = document.querySelector(".complete-checkout-btn");
 
-  const shippingFee = 5.0;
+  const shippingFee = ;
 
   let products = [];
   let selectedItems = [];
@@ -243,3 +243,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
