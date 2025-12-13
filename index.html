@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JETE</title>
+
+    <link rel="stylesheet" href="Bstyle.css">
+
+    <!-- Cloudflare Icons -->
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="msgModal" class="modal">
+  <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalMessage"></p>
+      <button onclick="closeModal()" class="">OK</button>
+  </div>
+</div>
+
+
+                    <!--Header-->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+            <img src="fireext.png" alt="Fire Logo" class="fire-logo">
+            <h1>JETE</h1>
+        </div>
+
+            <div class="nav-bar">
+                <ul>
+                    <li class="nav-menu"><a href="#home"><r><span></span><span></span><span></span><span></span>Home</r></a></li>
+                    <li class="nav-menu"><a href="Shop.html"><r><span></span><span></span><span></span><span></span>Shop</r></a></li>
+                    <li class="nav-menu"><a href="#about"><r><span></span><span></span><span></span><span></span>About</r></a></li>
+                    <li class="nav-menu"><a href="#contact"><r><span></span><span></span><span></span><span></span>Contact</r></a></li>
+                </ul>
+
+                <div class="user-actions">
+                    <div class="user-welcome" id="userWelcome" style="color: white; font-weight: bold;"></div>
+
+                    <a href="Login.html" class="login-btn" id="loginBtn">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+
+                    <div class="cart-btn">
+                        <a href="cart.html" class="cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        <span class="cart-count">0</span>
+                    </div>
+
+                    <div class="order-btn">
+                        <a href="Profile.html"><i class="fa-solid fa-box"></i></a>
+                    </div>
+
+                    <a href="#" id="logoutBtn" class="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+         <!--Main Content-->
+    <main>
+
+        <!--home-->
+        <section id="home" class="home-section">
+            <h1>School Supplies, Ice Cream, Fire Extinguishers and Safety Kits</h1>
+            <h1>- Only at JETE.</h1>
+        </section>
+
+        <!-- product-->
+        <section id="products">
+            <h1 style="text-align:center;">Products</h1>
+            <div class="products-container"></div>
+        </section>
+
+        <section id="about" class="about-section">
+    <h1 class="section-title">About JETE</h1>
+
+    <div class="aboutus-container single-column">
+        <div class="about-text">
+            <p>
+                Founded in <strong>2014</strong>, JETE has grown to become a trusted provider of
+                essential safety equipment and quality school supplies in our community.
+                From the beginning, our mission has been clear — to offer reliable products
+                that protect lives and support education.
+            </p>
+
+            <p>
+                At JETE, we specialize in <strong>fire extinguishers, emergency safety kits,
+                and personal protective equipment</strong>, ensuring households, businesses,
+                and institutions are prepared for unexpected emergencies. Our focus on
+                quality, affordability, and customer satisfaction has made us a reliable
+                source for safety solutions.
+            </p>
+
+            <p>
+                In addition to safety products, we supply a wide range of
+                <strong>school materials</strong>, including notebooks, writing tools,
+                art supplies, and classroom essentials. Whether you're a student,
+                parent, or school administrator, we make sure you have what you need
+                to succeed.
+            </p>
+
+            <p>
+                For more than a decade, JETE has proudly served customers with
+                <strong>dedication, honesty, and practical product knowledge</strong>.
+                We continue to expand our products and services while keeping our
+                commitment to improving safety and education in the community.
+            </p>
+        </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- contact -->
+        <section id="contact">
+            <form id="contactForm">
+                <div class="contact-form">
+
+                    <div class="form-control">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Enter your message"></textarea>
+                    </div>
+
+
+
+                    <button type="submit" class="submit-btn">Submit</button>
+
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <div class="footer">
+        <p>🐇 JETE Website. All rights reserved. 2025</p>
+    </div>
+
+    <!-- footer -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script src="firebase.js"></script>
+    <script src="homepagescript.js"></script>
+  
+
+</body>
+</html>
