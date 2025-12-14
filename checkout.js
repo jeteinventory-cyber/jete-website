@@ -67,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     try {
-      // LOAD PRODUCTS FIRST
+      
       await loadProducts();
 
-      // LOAD ONLY SELECTED ITEMS
+ 
   const selectionSnap = await firebase.database()
       .ref("checkoutSelections/" + uid)
       .once("value");
@@ -243,5 +243,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
