@@ -8,7 +8,6 @@ body {
 }
 
 
-/*Header*/
 
 header {
     background: rgba(0, 0, 0, 0.45);
@@ -30,8 +29,7 @@ header {
     margin: auto;
 }
 
-        /*nav*/
-
+      
 .logo h1 {
     margin: 0;
     font-size: 2rem;
@@ -154,7 +152,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-/*Home Section*/
+
 
 .home-section {
     background-image: url('image.png');
@@ -202,14 +200,14 @@ header {
 
 
 
-/* Mobile text resize */
+
 @media (max-width: 768px) {
     .home-section h1 {
         font-size: 2rem;
     }
 }
 
-/*Product Section*/
+
 
 #products {
     background-color: #f0f4ff;
@@ -256,7 +254,7 @@ header {
 }
 
 
-/* About Section */
+
 
 .about-section {
     padding: 60px 20px;
@@ -296,7 +294,7 @@ header {
 }
 
 
-/*Contact Section*/
+
 
 #contact {
     background: #0f0f0f;
@@ -360,7 +358,7 @@ header {
     background: rgba(0,0,0,0.55);
 }
 
-   /* Submit Button */
+ 
 .submit-btn {
     width: 100%;
     padding: 15px;
@@ -401,7 +399,7 @@ header {
   text-align: center;
 }
 
-    /*Footer*/
+ 
 
 .footer {
     background: #dde6e6;
@@ -414,12 +412,13 @@ header {
 
 
 
-      /* Mobile */
+     
 @media (max-width: 600px) {
     .contact-form {
         width: 100%;
         padding: 25px;
     }
 }
+
 
  
