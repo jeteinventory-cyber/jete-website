@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("logoutBtn");
   const ordersTableBody = document.getElementById("ordersTableBody");
 
-  //EmailJS
+
   
   (function () {
     emailjs.init("gSGSQ7CSu6PRt9BS_");
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (user) {
         const uid = user.uid;
 
-        // 🔥 FIX: Load cart in real time
+
         firebase.database().ref("carts/" + uid).on("value", (snap) => {
           cart = snap.val() || {};
           updateCartCount();
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </tr>
     `;
 
-    // If NOT logged in
+
     if (!user) {
       if (loginBtn) loginBtn.style.display = "inline-block";
       if (logoutBtn) logoutBtn.style.display = "none";
@@ -132,13 +132,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // If LOGGED IN
+  
     const uid = user.uid;
 
     if (loginBtn) loginBtn.style.display = "none";
     if (logoutBtn) logoutBtn.style.display = "inline-block";
 
-    // Load username
+  
     try {
       const userSnap = await firebase.database().ref(`users/${uid}`).once("value");
       const userData = userSnap.val();
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.warn("Could not fetch profile:", err);
     }
 
-    // Load Orders
+  
     try {
       const ordersRef = firebase.database().ref("onlineOrders");
 
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           
         }
-        // dropdown functionality
+     
         setTimeout(() => {
           document.querySelectorAll(".dropdown-btn").forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -227,3 +227,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
