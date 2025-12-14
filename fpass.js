@@ -1,4 +1,4 @@
-// Forgot Password 
+
 document.getElementById("forgotForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value.trim();
@@ -12,7 +12,7 @@ document.getElementById("forgotForm").addEventListener("submit", async (e) => {
   errorMsg.textContent = "";
 
   try {
-    // Check if email exists 
+    
     const snapshot = await firebase.database().ref("users").once("value");
     let userFound = false;
 
@@ -25,7 +25,7 @@ document.getElementById("forgotForm").addEventListener("submit", async (e) => {
       return;
     }
 
-    // Send password reset link to your email
+   
     
     firebase.auth().sendPasswordResetEmail(email)
       .then(() => {
@@ -43,3 +43,4 @@ document.getElementById("forgotForm").addEventListener("submit", async (e) => {
     errorMsg.textContent = err.message;
   }
 });
+
