@@ -1,6 +1,7 @@
 
 
-/* Family Font*/
+/* family font*/
+
 *{
     margin:0;
     padding:0;
@@ -61,7 +62,7 @@ body {
   height: 20px;
 }
 
-/*Form*/
+
 
 
 .Login{
@@ -181,7 +182,7 @@ body {
   margin-top: -10px; 
 }
 
-/* errors as displayed blocks */
+
 
 .error-text {
   display: block; 
@@ -206,7 +207,6 @@ body {
 }
 
 
-/* Modal Background */
 .modal {
   display: none; 
   position: fixed;
@@ -219,7 +219,7 @@ body {
   backdrop-filter: blur(3px);
 }
 
-/* Modal Box */
+
 .modal-content {
   background: white;
   padding: 30px;
@@ -247,3 +247,4 @@ body {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
