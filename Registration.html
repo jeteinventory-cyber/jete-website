@@ -17,35 +17,33 @@
               </div>
             </div>
 
-    <!--All datas that will be registered here will still yet be to connected to the database and be fetched. -->
-
-    <!--Register Form-->
+    
     <form action="#" class="SignUp" autocomplete="off">
 
     
       <div id="errorMsg" class="error-text global-error"></div>
 
-      <!--Username-->
+    
       <div class="Log-Box">
         <div id="error-username" class="error-text"></div>
         <input type="text" class="field" placeholder="Username" id="signname" />
       </div>
 
-      <!--Email-->
+     
       <div class="Log-Box">
         <div id="error-email" class="error-text"></div>
         <input type="text" class="field" placeholder="Email" id="email" />
         <img src="email.png" class="icon" alt="Email" />
       </div>
 
-      <!--Password-->
+      
       <div class="Log-Box">
         <div id="error-password" class="error-text"></div>
         <input type="password" class="field" placeholder="Password" id="signpass" />
         <img src="lock.png" class="icon" alt="Password" />
       </div>
 
-      <!--This is yet to be able to receive SMS when the billing is activated -->
+    
       
       <div class="Log-Box">
       <div id="error-phone" class="error-text"></div>
@@ -55,7 +53,7 @@
        maxlength="14" />
       </div>
 
-      <!--Confirmation Code in Hidden Mode-->
+      
       <div class="Log-Box" id="confirmationBox" style="display: none;">
         <div id="error-confirm" class="error-text"></div>
         <input type="text" id="codeInput" class="field" placeholder="Enter confirmation code" />
@@ -64,15 +62,13 @@
       </div>
       
    
-       
-      <!--Checkbox-->
+
       <div class="form">
         <input type="checkbox" id="agree" />
         <label for="agree">I agree to terms & conditions</label>
         <div id="error-agree" class="error-text"></div>
       </div>
 
-      <!--Submit-->
           <div id="loadingBar" class="loading-bar" style="display:none;">
         <div class="loading-progress"></div>
     </div>
@@ -81,7 +77,7 @@
         <button type="button" class="SubmitBtn" id="SignUpBT">Sign Up</button>
       </div>
 
-      <!--Link to Login-->
+      
       <div class="RegisterForm">
         <span>Already have an account? <a href="Login.html">Login</a></span>
       </div>
@@ -91,15 +87,15 @@
 
 
 
- <!-- Firebase App (Compat SDK) -->
+
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
-<!-- Your Firebase config and initialization -->
+
 <script src="firebase.js"></script>
 
-<!-- Your form logic -->
+
 <script src="script2.js"></script>
 
 <div id="termsModal" class="modal" style="display:none;">
@@ -158,4 +154,5 @@
 
 </body>
 </html>
+
 
