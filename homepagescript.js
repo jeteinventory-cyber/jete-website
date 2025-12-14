@@ -19,7 +19,7 @@ firebase.auth().onAuthStateChanged((user) => {
       }
     });
 
-    // Load cart
+
     firebase.database().ref('carts/' + uid).on('value', (snapshot) => {
       cart = snapshot.val() || {};
       updateCartCount();
@@ -40,7 +40,7 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
-// LOGOUT
+
 const logoutBtn = document.getElementById("logoutBtn");
 if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {
@@ -51,12 +51,11 @@ if (logoutBtn) {
 }
 
 
-// EMAIL JS INIT
 (function () {
     emailjs.init("gSGSQ7CSu6PRt9BS_");
 })();
 
-// CONTACT FORM
+
 document.getElementById("contactForm").addEventListener("submit", function(event){
     event.preventDefault();
 
@@ -85,9 +84,6 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 });
 
 
-// ----------------------
-// PRODUCT FETCHING
-// ----------------------
 
 let products = [];
 let currentRandomSet = [];
@@ -173,10 +169,11 @@ function closeModal() {
 
   const redirect = modal.dataset.redirect;
 
-  // ONLY redirect if redirect is a real URL
+  
   if (redirect && redirect !== "null" && redirect !== "" && redirect !== "undefined") {
       window.location.href = redirect;
   }
 }
+
 
 
