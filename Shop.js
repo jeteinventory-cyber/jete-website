@@ -28,8 +28,7 @@ function fetchProducts() {
           Price: product.Price || 0,
           Stock: product.Stock || 0,
           OnlineStatus: product.OnlineStatus || "Available",
-          Status: product.Status || "Good",  // ⬅ NEW: STATUS (Fresh, Good, Expired)
-
+          Status: product.Status || "Good", 
           image: product.ProductID
             ? `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/${product.ProductID}`
             : 'https://via.placeholder.com/300x200?text=No+Image'
@@ -51,7 +50,6 @@ function fetchProducts() {
   });
 }
 
-// Auth listener
 firebase.auth().onAuthStateChanged((user) => {
   const welcomes = document.getElementById("userWelcome");
   const loginBtn = document.querySelector(".login-btn");
@@ -92,7 +90,7 @@ firebase.auth().onAuthStateChanged((user) => {
   fetchProducts();
 });
 
-// Add to cart
+
 function addToCart(productId) {
   const user = firebase.auth().currentUser;
   if (!user) {
@@ -120,7 +118,7 @@ function addToCart(productId) {
     .catch(err => console.error("Error saving cart:", err));
 }
 
-// Render products
+
 function renderProducts() {
   const container = document.querySelector(".products-container");
   if (!container) {
@@ -180,13 +178,13 @@ function renderProducts() {
   }).join("");
 }
 
-// Update cart badge
+
 function updateCartCount() {
   const count = Object.values(cart).reduce((a, b) => a + b, 0);
   document.querySelectorAll(".cart-count").forEach((el) => el.textContent = count);
 }
 
-// Floating message
+
 function showAddedMessage() {
   const msg = document.createElement("div");
   msg.textContent = " Item added to your cart!";
@@ -245,11 +243,12 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("categorySelect")?.addEventListener("change", renderProducts);
 });
 
-// Logout
+
 document.getElementById("logoutBtn")?.addEventListener("click", () => {
   firebase.auth().signOut().then(() => {
     window.location.href = "Login.html";
   });
 });
+
 
 
