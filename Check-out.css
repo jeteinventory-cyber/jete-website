@@ -239,6 +239,12 @@ body {
     background: #0057d9;
 }
 
+.payment-method {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  font-weight: 500;
+}
 
 
 /* mobile  */
@@ -248,4 +254,5 @@ body {
         padding: 20px;
     }
 }
+
 
