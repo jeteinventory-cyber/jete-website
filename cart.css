@@ -1,17 +1,13 @@
-/* ==========================================================
-   GLOBAL (MATCH EXACT Bstyle)
-========================================================== */
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f8f7f7; /* MATCH Bstyle exactly */
+    background: #f8f7f7;
     color: #222;
     padding-top: 80px; 
 }
 
-/* ==========================================================
-   HEADER (EXACT FROM Bstyle)
-========================================================== */
+
 header {
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(6px);
@@ -32,7 +28,7 @@ header {
     margin: auto;
 }
 
-/* Logo */
+
 .logo {
     display: flex;
     align-items: center;
@@ -52,7 +48,7 @@ header {
     font-weight: 700;
 }
 
-/* Navigation */
+
 .nav-bar ul {
     list-style: none;
     display: flex;
@@ -74,7 +70,7 @@ header {
     background: rgba(255, 255, 255, 0.15);
 }
 
-/* User actions */
+
 .user-actions {
     display: flex;
     align-items: center;
@@ -152,7 +148,7 @@ header {
 }
 
 
-/* Navigation */
+
 
 .cart-page {
     background: #f0f4ff;
@@ -173,7 +169,7 @@ header {
     
 }
 
-/* Title */
+
 .cart-content h2 {
     font-size: 6rem;
     font-weight: 700;
@@ -182,7 +178,7 @@ header {
 }
 
 
-/* cart item*/
+
 
 .cart-item {
     display: flex;
@@ -214,7 +210,7 @@ header {
     color: #555;
 }
 
-/* Quantity */
+
 .cart-quantity {
     display: flex;
     align-items: center;
@@ -242,7 +238,7 @@ header {
     font-weight: 600;
 }
 
-/* Remove */
+
 .remove-btn {
     background: #ff4d4d;
     color: white;
@@ -258,7 +254,7 @@ header {
 }
 
 
-/* total */
+
 .cart-total {
     font-size: 1.3rem;
     font-weight: bold;
@@ -282,7 +278,7 @@ header {
     transition: 0.25s;
 }
 
-/* Close */
+
 .close-btn {
     text-align: center;
     background: #333;
@@ -294,7 +290,7 @@ header {
     background: #111;
 }
 
-/* Checkout */
+
 .checkout-btn {
     text-align: center;
     background: #1e90ff;
@@ -309,7 +305,6 @@ header {
 
 
 
-/* footer */
 .footer {
     background: #dde6e6;
     text-align: center;
@@ -361,4 +356,5 @@ header {
     .contact-form {
         width: 100%;
     }
+
 }
