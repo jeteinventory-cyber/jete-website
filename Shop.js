@@ -2,8 +2,6 @@ let cart = {};
 let currentUid = null;
 let products = []; 
 
-
-
 function fetchProducts() {
   console.log("Fetching products from Firebase...");
 
@@ -17,7 +15,14 @@ function fetchProducts() {
       Object.keys(productsData).forEach(key => {
         const product = productsData[key];
 
-        if (!product || typeof product !== 'object' || !product.Name) return;
+        // Skip products missing required fields, out of stock, or not available online
+        if (
+          !product ||
+          typeof product !== 'object' ||
+          !product.Name ||
+          product.Stock <= 0 ||
+          product.OnlineStatus !== "Available"
+        ) return;
 
         const cloudName = "dys5zlhpk";
 
@@ -27,14 +32,12 @@ function fetchProducts() {
           Category: product.Category || 'Uncategorized',
           Price: product.Price || 0,
           Stock: product.Stock || 0,
-          OnlineStatus: product.OnlineStatus || "Available",
-          Status: product.Status || "Good",  
-
+          OnlineStatus: product.OnlineStatus || "Unavailable",
+          Status: product.Status || "Good",
           image: product.ProductID
-            ? `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/${product.ProductID}`
+            ? https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/${product.ProductID}
             : 'https://via.placeholder.com/300x200?text=No+Image'
         });
-
       });
 
       console.log("Products loaded:", products.length, "products");
@@ -51,7 +54,6 @@ function fetchProducts() {
   });
 }
 
-
 firebase.auth().onAuthStateChanged((user) => {
   const welcomes = document.getElementById("userWelcome");
   const loginBtn = document.querySelector(".login-btn");
@@ -66,7 +68,7 @@ firebase.auth().onAuthStateChanged((user) => {
       const data = snapshot.val();
       const username = data?.username || user.email.split("@")[0];
       if (welcomes) {
-        welcomes.textContent = `Welcome, ${username}!`;
+        welcomes.textContent = Welcome, ${username}!;
         welcomes.style.display = "block";
       }
     });
@@ -92,7 +94,6 @@ firebase.auth().onAuthStateChanged((user) => {
   fetchProducts();
 });
 
-
 function addToCart(productId) {
   const user = firebase.auth().currentUser;
   if (!user) {
@@ -101,15 +102,18 @@ function addToCart(productId) {
   }
 
   const product = products.find(p => p.ProductID === productId);
+
+  if (!product) return;
+
   const currentInCart = cart[productId] || 0;
 
-  if (product && currentInCart >= product.Stock) {
-    alert(`Sorry, only ${product.Stock} items available in stock.`);
+  if (currentInCart >= product.Stock) {
+    alert(Sorry, only ${product.Stock} items available in stock.);
     return;
   }
 
   const uid = user.uid;
-  const updatedCart = { ...cart, [productId]: (cart[productId] || 0) + 1 };
+  const updatedCart = { ...cart, [productId]: currentInCart + 1 };
   cart = updatedCart;
   updateCartCount();
   renderProducts();
@@ -120,15 +124,12 @@ function addToCart(productId) {
     .catch(err => console.error("Error saving cart:", err));
 }
 
-
 function renderProducts() {
   const container = document.querySelector(".products-container");
   if (!container) {
     console.error("Products container not found!");
     return;
   }
-
-  console.log("Rendering products. Total:", products.length);
 
   const searchValue = document.getElementById("searchInput")?.value.toLowerCase() || "";
   const selectedCategory = document.getElementById("categorySelect")?.value || "all";
@@ -139,8 +140,6 @@ function renderProducts() {
     p.Name.toLowerCase().includes(searchValue)
   );
 
-  console.log("Filtered products:", filtered.length);
-
   if (filtered.length === 0) {
     container.innerHTML = '<div class="no-products">No products found</div>';
     return;
@@ -148,35 +147,30 @@ function renderProducts() {
 
   container.innerHTML = filtered.map((product) => {
     const inCart = cart[product.ProductID] || 0;
-    const outOfStock = product.Stock <= 0;
     const maxReached = inCart >= product.Stock;
 
     return `
        <div class="product-card">
-
-    <a href="${product.image}" target="_blank">
-     <img 
-        src="${product.image}" 
-        alt="${product.Name}" 
-        class="product-image"
-        onclick="openImageModal('${product.image}')"
-      >
-
-    </a>
-
-    <h3>${product.Name}</h3>
-    <p class="product-category">Category: ${product.Category}</p>
-    <p class="product-price">Price: ₱${product.Price}</p>
-    <p class="product-stock">Stock: ${product.Stock}</p>
-
-    <button onclick="addToCart('${product.ProductID}')"
-      ${outOfStock || maxReached ? 'disabled' : ''}>
-      ${outOfStock ? 'Out of Stock' : maxReached ? 'Max Reached' : 'Add to Cart'}
-    </button>
-
-    <p class="in-cart">In Cart: ${inCart}</p>
-  </div>
-`;
+        <a href="${product.image}" target="_blank">
+          <img 
+            src="${product.image}" 
+            alt="${product.Name}" 
+            class="product-image"
+            onclick="openImageModal('${product.image}')"
+          >
+        </a>
+        <h3>${product.Name}</h3>
+        <p class="product-category">Category: ${product.Category}</p>
+        <p class="product-price">Price: ₱${product.Price}</p>
+        <p class="product-stock">Stock: ${product.Stock}</p>
+        <button onclick="addToCart('${product.ProductID}')"
+          ${maxReached ? 'disabled' : ''}>
+          ${maxReached ? 'Max Reached' : 'Add to Cart'}
+        </button>
+        <p class="in-cart">In Cart: ${inCart}</p>
+        <p class="online-status">Status: ${product.OnlineStatus}</p>
+      </div>
+    `;
   }).join("");
 }
 
@@ -184,7 +178,6 @@ function updateCartCount() {
   const count = Object.values(cart).reduce((a, b) => a + b, 0);
   document.querySelectorAll(".cart-count").forEach((el) => el.textContent = count);
 }
-
 
 function showAddedMessage() {
   const msg = document.createElement("div");
@@ -210,25 +203,18 @@ function showAddedMessage() {
   }, 1500);
 }
 
-
 function openImageModal(src) {
   event?.preventDefault();   
   event?.stopPropagation();
-
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
-
-  
-
   modal.style.display = "block";
   modalImg.src = src;
 }
 
-
 document.querySelector(".close-modal").onclick = function() {
   document.getElementById("imageModal").style.display = "none";
 };
-
 
 window.onclick = function(event) {
   const modal = document.getElementById("imageModal");
@@ -237,19 +223,14 @@ window.onclick = function(event) {
   }
 };
 
-
 document.addEventListener("DOMContentLoaded", () => {
   fetchProducts();
   document.getElementById("searchInput")?.addEventListener("input", renderProducts);
   document.getElementById("categorySelect")?.addEventListener("change", renderProducts);
 });
 
-
 document.getElementById("logoutBtn")?.addEventListener("click", () => {
   firebase.auth().signOut().then(() => {
     window.location.href = "Login.html";
   });
 });
-
-
-
