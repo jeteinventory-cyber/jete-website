@@ -6,7 +6,7 @@ const RegisterTitle = document.querySelector(".RGT");
 const BTNsignup = document.querySelector("#SignUpBT");
 const BTNsignin = document.querySelector("#SignIn");
 
-//Login
+
     
 function LoginFunction()
 { 
@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-      //Button Sign in
-
 
   BTNsignin.addEventListener("click", function (e) {
     e.preventDefault();
@@ -42,20 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("error-email").innerText = "";
     document.getElementById("error-password").innerText = "";
 
-    // Firebase login with email/password
+
 
     firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
 
-    // Show modal
+   
     const modal = document.getElementById("loginModal");
     modal.style.display = "block";
 
-    // Redirect after 2 seconds
+    
     setTimeout(() => {
       window.location.href = "index.html";
     }, 2000);
   })
+        
   .catch((error) => {
     console.error("Login error:", error.message);
 
@@ -67,4 +66,5 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   });
+
 });
