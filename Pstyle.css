@@ -174,7 +174,7 @@ section {
 
 
 
-/*Contact Section*/
+
 
 #contact {
     background: #0f0f0f;
@@ -261,7 +261,7 @@ section {
 
 
 
-/* Footer */
+
 
 .footer {
     background: #dde6e6;
@@ -273,7 +273,7 @@ section {
 }
 
 
-/*Login Design*/
+
 
 .login-btn:focus,
 .login-btn:active {
@@ -399,7 +399,7 @@ section {
 }
 
 
-/* Order Dropdown */
+
 .dropdown-btn {
   background: #222;
   color: white;
@@ -461,10 +461,11 @@ section {
 }
 
 
-    /* Mobile */
+
 @media (max-width: 600px) {
     .contact-form {
         width: 100%;
         padding: 25px;
     }
+
 }
