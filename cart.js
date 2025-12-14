@@ -213,7 +213,7 @@ function saveSelectedItemsForCheckout() {
     }
   });
 
-  // Overwrite the previous selected items
+  
 
   firebase.database()
     .ref("checkoutSelections/" + currentUID)
@@ -254,3 +254,4 @@ function showModal() {
 function closeModal() {
   document.getElementById("checkoutModal").style.display = "none";
 }
+
