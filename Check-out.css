@@ -245,6 +245,7 @@ body {
   color:white;
   border-radius: 5px;
   font-weight: 500;
+  width: 150px;
 }
 
 
@@ -255,6 +256,7 @@ body {
         padding: 20px;
     }
 }
+
 
 
 
