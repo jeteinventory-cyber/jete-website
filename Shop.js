@@ -15,7 +15,7 @@ function fetchProducts() {
       Object.keys(productsData).forEach(key => {
         const product = productsData[key];
 
-        // Skip products missing required fields, out of stock, or not available online
+      
         if (
           !product ||
           typeof product !== 'object' ||
@@ -234,3 +234,4 @@ document.getElementById("logoutBtn")?.addEventListener("click", () => {
     window.location.href = "Login.html";
   });
 });
+
